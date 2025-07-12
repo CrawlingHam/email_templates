@@ -189,9 +189,11 @@ await emailService.send({
 
 ### Adding New Templates
 
-1. Create a new file in the `emails/` directory
+1. Create a new file in the `templates/` directory
 2. Import and use the base template components
 3. Customize the content and styling as needed
+4. Create a copy of the same file in `emails/` directory
+5. Execute `pnpm export` to export the component into a static html file
 
 Example:
 

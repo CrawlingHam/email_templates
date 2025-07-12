@@ -6,14 +6,15 @@ type VerificationTemplateProps = {
     footerText?: string;
     description: string;
     buttonText: string;
-    subHeader: string;
+    previewText: string;
+    subHeader?: string;
     header: string;
 };
 
-const VerificationTemplate = ({ subHeader, header, description, buttonText, footerText }: VerificationTemplateProps) => (
+const VerificationTemplate = ({ previewText, subHeader, header, description, buttonText, footerText }: VerificationTemplateProps) => (
     <Html>
         <Head />
-        <Preview>{subHeader}</Preview>
+        <Preview>{previewText}</Preview>
         <Body style={main}>
             <Container style={container}>
                 <div style={logoContainer("dark")}>
@@ -21,6 +22,8 @@ const VerificationTemplate = ({ subHeader, header, description, buttonText, foot
                 </div>
 
                 <Heading style={h1}>{header}</Heading>
+
+                {subHeader && <Text style={text}>{subHeader}</Text>}
 
                 <Text style={text}>{description}</Text>
 
